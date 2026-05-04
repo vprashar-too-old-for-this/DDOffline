@@ -213,6 +213,7 @@ export default function App() {
   const restart = () => {
     setGameState({
       playerName: '',
+      playerAvatar: '/WizardSprite.png',
       difficulty: 5,
       playerHealth: INITIAL_PLAYER_HEALTH,
       playerMaxHealth: INITIAL_PLAYER_HEALTH,
