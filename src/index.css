@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-sky-100 text-slate-900;
+  }
+}
+
+@layer components {
+  .cartoon-panel {
+    @apply bg-amber-50 border-4 border-amber-900 rounded-3xl shadow-[8px_8px_0px_0px_rgba(120,66,18,1)];
+  }
+  
+  .cartoon-button {
+    @apply bg-amber-400 border-4 border-amber-900 rounded-2xl px-6 py-3 font-bold text-amber-950 shadow-[4px_4px_0px_0px_rgba(120,66,18,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all;
+  }
+
+  .cartoon-button-primary {
+    @apply bg-cyan-400 border-4 border-cyan-900 shadow-[4px_4px_0px_0px_rgba(8,51,68,1)] text-cyan-950;
+  }
+
+  .cartoon-button-danger {
+    @apply bg-red-400 border-4 border-red-900 shadow-[4px_4px_0px_0px_rgba(127,29,29,1)] text-red-950;
+  }
+
+  .cartoon-button-success {
+    @apply bg-emerald-400 border-4 border-emerald-900 shadow-[4px_4px_0px_0px_rgba(6,78,59,1)] text-emerald-950;
+  }
+
+  .bg-sky-pattern {
+    background: linear-gradient(to bottom, #7dd3fc 0%, #38bdf8 100%);
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 8%),
+      radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 12%),
+      linear-gradient(to bottom, #7dd3fc 0%, #38bdf8 100%);
+  }
+
+  .bg-ground-pattern {
+    background-color: #10b981;
+    background-image: radial-gradient(#059669 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .scale-flip {
+    transform: scaleX(-1);
+  }
+}
