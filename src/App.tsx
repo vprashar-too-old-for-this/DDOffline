@@ -29,8 +29,8 @@ const INITIAL_DRAGON_HEALTH = 500;
 
 const AVATARS = [
   { id: 'wizard', name: 'Wizard', icon: '/WizardSprite.png', uiIcon: <Zap className="w-6 h-6" /> },
-  { id: 'knight', name: 'Knight', icon: '/WizardSprite.png', uiIcon: <Shield className="w-6 h-6" /> },
-  { id: 'archer', name: 'Archer', icon: '/WizardSprite.png', uiIcon: <Target className="w-6 h-6" /> },
+  { id: 'knight', name: 'Knight', icon: '/Knight.png', uiIcon: <Shield className="w-6 h-6" /> },
+  { id: 'archer', name: 'Archer', icon: '/Archer.png', uiIcon: <Target className="w-6 h-6" /> },
 ];
 
 export default function App() {
@@ -465,6 +465,12 @@ export default function App() {
             </div>
           )}
         </AnimatePresence>
+
+        <div className="mt-auto py-2 text-center">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-amber-900/40 italic">
+            Designed by Aanya Prashar
+          </p>
+        </div>
       </main>
 
       <style>{`
@@ -775,13 +781,23 @@ function CombatStage({ gameState }: { gameState: GameState }) {
           </div>
         </motion.div>
 
+        {/* Player Shadow */}
+        <motion.div 
+          animate={{ 
+            scale: [0.6, 0.8, 0.6],
+            opacity: [0.15, 0.25, 0.15]
+          }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-4 left-32 w-32 h-6 bg-black/40 blur-xl rounded-[100%] z-0 pointer-events-none"
+        />
+
         {/* Player - standing in front of the castle */}
-        <div className="absolute bottom-8 left-32 z-40">
+        <div className="absolute bottom-6 left-32 z-40">
           <motion.div 
              animate={{
-                y: [0, -10, 0],
+                y: [0, -6, 0],
              }}
-             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
              className="relative flex flex-col items-center"
           >
             {/* Legend says a true wizard needs a magical aura */}
